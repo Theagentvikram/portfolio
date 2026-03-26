@@ -15,6 +15,23 @@
   --font-mono: var(--font-jetbrains);
 }
 
+/* ── Font switching ── */
+[data-font="plus-jakarta"] body {
+  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif !important;
+}
+[data-font="outfit"] body {
+  font-family: var(--font-outfit), 'Outfit', sans-serif !important;
+}
+[data-font="dm-sans"] body {
+  font-family: var(--font-dm-sans), 'DM Sans', sans-serif !important;
+}
+[data-font="onest"] body {
+  font-family: var(--font-onest), 'Onest', sans-serif !important;
+}
+[data-font="geist"] body {
+  font-family: var(--font-geist), 'Geist', sans-serif !important;
+}
+
 /* ── Theme CSS variables ── */
 [data-theme="dark"] {
   --bg: #0A0A0A;
@@ -52,17 +69,16 @@ html { scroll-behavior: auto; font-size: 16px; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   cursor: none;
 }
 
-/* Hide native cursor everywhere on pointer devices */
-*, *::before, *::after { cursor: none !important; }
-@media (pointer: coarse) {
-  *, *::before, *::after { cursor: auto !important; }
+/* Hide native cursor on pointer devices — body only, not * */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
 }
 
 ::selection { background: #FF0000; color: #fff; }

@@ -5,8 +5,8 @@ import { useEffect, useRef } from "react";
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-  const mouse = useRef({ x: -100, y: -100 });
-  const ring = useRef({ x: -100, y: -100 });
+  const mouse = useRef({ x: -200, y: -200 });
+  const ring = useRef({ x: -200, y: -200 });
   const hovered = useRef(false);
   const rafId = useRef<number>(0);
 
@@ -17,13 +17,8 @@ export default function CustomCursor() {
     const ringEl = ringRef.current;
     if (!dot || !ringEl) return;
 
-    const onEnterWindow = () => {
-      dot.style.opacity = "1";
-      ringEl.style.opacity = "1";
-    };
     const onLeaveWindow = () => {
-      dot.style.opacity = "0";
-      ringEl.style.opacity = "0";
+      mouse.current = { x: -200, y: -200 };
     };
 
     const onMove = (e: MouseEvent) => {
@@ -64,7 +59,6 @@ export default function CustomCursor() {
     };
 
     document.addEventListener("mousemove", onMove, { passive: true });
-    document.addEventListener("mouseenter", onEnterWindow);
     document.addEventListener("mouseleave", onLeaveWindow);
     document.addEventListener("mouseover", onOver, { passive: true });
     document.addEventListener("mouseout", onOut, { passive: true });
@@ -72,7 +66,6 @@ export default function CustomCursor() {
 
     return () => {
       document.removeEventListener("mousemove", onMove);
-      document.removeEventListener("mouseenter", onEnterWindow);
       document.removeEventListener("mouseleave", onLeaveWindow);
       document.removeEventListener("mouseover", onOver);
       document.removeEventListener("mouseout", onOut);
@@ -85,13 +78,13 @@ export default function CustomCursor() {
       {/* Dot — instant position, no transition */}
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[9998] h-2 w-2 rounded-full bg-[#FF0000] opacity-0"
+        className="pointer-events-none fixed left-0 top-0 z-[9998] h-2 w-2 rounded-full bg-[#FF0000]"
         style={{ willChange: "transform" }}
       />
       {/* Ring — lerp + scale applied together in rAF, no CSS transition on transform */}
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[9997] h-9 w-9 rounded-full border border-[#FF0000]/50 opacity-0"
+        className="pointer-events-none fixed left-0 top-0 z-[9997] h-9 w-9 rounded-full border border-[#FF0000]/50"
         style={{ willChange: "transform" }}
       />
     </>
