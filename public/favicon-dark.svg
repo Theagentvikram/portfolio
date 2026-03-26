@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Round red background -->
+  <circle cx="32" cy="32" r="32" fill="#FF0000"/>
+
+  <!-- Fingerprint — concentric arcs tilted ~15°, centered at 32,34 -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" transform="rotate(-18, 32, 34)">
+    <!-- Core dot -->
+    <circle cx="32" cy="34" r="2" fill="#ffffff" stroke="none"/>
+
+    <!-- Arc 1 -->
+    <path stroke-width="2.4" d="M 27,34 a 5,5 0 0 1 10,0"/>
+
+    <!-- Arc 2 -->
+    <path stroke-width="2.2" d="M 23.5,34 a 8.5,8.5 0 0 1 17,0"/>
+
+    <!-- Arc 3 -->
+    <path stroke-width="2.0" d="M 20,34 a 12,12 0 0 1 24,0"/>
+
+    <!-- Arc 4 -->
+    <path stroke-width="1.8" d="M 16.5,34 a 15.5,15.5 0 0 1 31,0"/>
+
+    <!-- Arc 5 — outermost -->
+    <path stroke-width="1.6" d="M 13,34 a 19,19 0 0 1 38,0"/>
+
+    <!-- Bottom closing sweeps -->
+    <path stroke-width="2.3" d="M 27,34 q 0,7 5,7 q 5,0 5,-7"/>
+    <path stroke-width="2.1" d="M 23.5,34 q 0,12 8.5,12 q 8.5,0 8.5,-12"/>
+    <path stroke-width="1.9" d="M 20,34 q 0,17 12,17 q 12,0 12,-17"/>
+  </g>
+</svg>

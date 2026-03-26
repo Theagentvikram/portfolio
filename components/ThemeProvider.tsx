@@ -35,6 +35,8 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
     setTheme(next);
     localStorage.setItem("theme", next);
     document.documentElement.setAttribute("data-theme", next);
+    const link = document.querySelector("link[rel='icon']") as HTMLLinkElement | null;
+    if (link) link.href = next === "light" ? "/favicon-light.svg" : "/favicon-dark.svg";
   };
 
   // Prevent flash: set attribute synchronously before paint via inline script
