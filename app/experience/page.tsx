@@ -29,7 +29,7 @@ const experiences = [
     company: "Syncd Analytics",
     role: "ML Engineer",
     period: "Aug 2025 – Present",
-    location: "Hyderabad, India",
+    location: "United States (Remote)",
     type: "Freelance",
     logo: "syncd",
     upwork: "https://www.upwork.com/freelancers/~01677b33e344495620",
