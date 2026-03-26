@@ -141,7 +141,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="text-[#FF0000] hover:text-[#FF3333] transition-colors cursor-pointer"
             >
-              TechAbhee.me
+              TechAbhee
             </a>
             .
           </motion.p>

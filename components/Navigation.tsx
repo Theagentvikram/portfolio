@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
+import FontPicker from "@/components/FontPicker";
 
 const links = [
   { href: "/", label: "Home" },
@@ -66,6 +67,9 @@ export default function Navigation() {
 
           {/* CTA + theme toggle + hamburger */}
           <div className="flex items-center gap-3">
+            {/* Font picker */}
+            <FontPicker />
+
             {/* Theme toggle */}
             <button
               onClick={toggleTheme}
