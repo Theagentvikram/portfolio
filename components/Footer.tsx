@@ -94,13 +94,13 @@ export default function Footer() {
                 Upwork
               </a>
               <a
-                href="https://techabhee.me"
+                href="https://techabhee.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[#FF0000] transition-colors cursor-pointer"
               >
                 <ExternalLink size={15} />
-                techabhee.me
+                techabhee.dev
               </a>
             </div>
           </div>

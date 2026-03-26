@@ -38,8 +38,8 @@ const socials = [
   {
     icon: ExternalLink,
     label: "Blog",
-    value: "techabhee.me",
-    href: "https://techabhee.me",
+    value: "techabhee.dev",
+    href: "https://techabhee.dev",
     hover: "hover:text-[#FF0000]",
   },
   {

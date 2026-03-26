@@ -81,13 +81,13 @@ export default function AboutPage() {
               Hyderabad, India
             </div>
             <a
-              href="https://techabhee.me"
+              href="https://techabhee.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm text-[#FF0000] hover:text-[#FF3333] transition-colors cursor-pointer font-500"
             >
               <ExternalLink size={13} />
-              Read my blog → techabhee.me
+              Read my blog → techabhee.dev
             </a>
           </div>
         </AnimateIn>
@@ -105,7 +105,7 @@ export default function AboutPage() {
             <p>
               That drive to share value led to the birth of my brand,{" "}
               <a
-                href="https://techabhee.me"
+                href="https://techabhee.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#FF0000] hover:text-[#FF3333] cursor-pointer font-500"
@@ -153,7 +153,7 @@ export default function AboutPage() {
         {/* Blog CTA */}
         <AnimateIn className="mb-20">
           <a
-            href="https://techabhee.me"
+            href="https://techabhee.dev"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between p-5 rounded-xl border border-[#FF0000]/20 bg-[#FF0000]/5 hover:bg-[#FF0000]/8 hover:border-[#FF0000]/30 transition-all cursor-pointer"
@@ -269,7 +269,7 @@ export default function AboutPage() {
               Full Experience
             </Link>
             <a
-              href="https://techabhee.me"
+              href="https://techabhee.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-[var(--border)] text-[var(--text-muted)] text-sm hover:border-[#FF0000]/30 hover:text-[#FF0000] transition-colors cursor-pointer"

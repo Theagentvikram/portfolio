@@ -136,7 +136,7 @@ export default function HomePage() {
             I build intelligent systems and full-stack products — from
             production ML pipelines to sleek user interfaces. Founder of{" "}
             <a
-              href="https://techabhee.me"
+              href="https://techabhee.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#FF0000] hover:text-[#FF3333] transition-colors cursor-pointer"
