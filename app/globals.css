@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-red: #FF0000;
+  --color-red-dark: #CC0000;
+  --color-red-hover: #FF3333;
+  --color-ink: #111111;
+  --color-ink2: #444444;
+  --color-ink3: #888888;
+  --color-bg: #0A0A0A;
+  --color-card: #141414;
+  --color-border: #2A2A2A;
+  --color-text: #F5F5F5;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+/* ── Theme CSS variables ── */
+[data-theme="dark"] {
+  --bg: #0A0A0A;
+  --bg-card: #141414;
+  --bg-card2: #1a1a1a;
+  --bg-surface: #0e0e0e;
+  --border: #2A2A2A;
+  --border-lt: #1e1e1e;
+  --text: #F5F5F5;
+  --text-muted: #888888;
+  --text-dim: #555555;
+  --red: #FF0000;
+  --red-hover: #FF3333;
+  --red-dim: rgba(255, 0, 0, 0.08);
+}
+
+[data-theme="light"] {
+  --bg: #FDF5F5;
+  --bg-card: #FFF8F8;
+  --bg-card2: #FFF0F0;
+  --bg-surface: #FAF0F0;
+  --border: #F0D8D8;
+  --border-lt: #F5E4E4;
+  --text: #111111;
+  --text-muted: #555555;
+  --text-dim: #888888;
+  --red: #FF0000;
+  --red-hover: #FF3333;
+  --red-dim: rgba(255, 0, 0, 0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: auto; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Hide native cursor everywhere on pointer devices */
+*, *::before, *::after { cursor: none !important; }
+@media (pointer: coarse) {
+  *, *::before, *::after { cursor: auto !important; }
+}
+
+::selection { background: #FF0000; color: #fff; }
+
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #FF0000; }
+
+/* Noise overlay (dark mode) */
+[data-theme="dark"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Red dot grid pattern (light mode) */
+[data-theme="light"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 1;
+  background-image: radial-gradient(circle, rgba(255,0,0,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* TechAbhee brand tag */
+.brand-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 0.5px solid rgba(255, 0, 0, 0.3);
+  background: rgba(255, 0, 0, 0.08);
+  color: #FF3333;
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+}
+
+.brand-tag::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #FF0000;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Wordmark — TechAbhee */
+.wordmark .light { font-weight: 300; color: #FF0000; }
+.wordmark .bold  { font-weight: 800; color: #FF0000; }
+.wordmark .fade  { font-weight: 300; color: #FF0000; opacity: 0.6; }
+
+/* Skill chip */
+.chip {
+  display: inline-flex;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--bg-card2);
+  border: 0.5px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-jetbrains), monospace;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.chip:hover {
+  border-color: rgba(255, 0, 0, 0.4);
+  color: var(--text);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid #FF0000;
+  outline-offset: 3px;
+}
+
+/* Shimmer sweep — used on service cards */
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.shimmer-card { position: relative; }
+
+.shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shimmer-card:hover .shimmer-overlay {
+  animation: shimmer-sweep 0.7s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
