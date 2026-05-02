@@ -107,9 +107,14 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-[var(--border-lt)] flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-[var(--text-dim)] font-mono">
-            © {year} Abhinay Cherupally. Built with Next.js & TechAbhee brand kit.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
+            <p className="text-xs text-[var(--text-dim)] font-mono">
+              © {year} Abhinay Cherupally. All rights reserved.
+            </p>
+            <Link href="/privacy" className="text-xs text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
           <div className="brand-tag">Available for work</div>
         </div>
       </div>
